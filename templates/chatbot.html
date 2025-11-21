@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agriculture Chatbot</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f4f8;
+        color: #333;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .chatbox {
+        background-color: #fff;
+        border-radius: 12px;
+        padding: 25px 30px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    h2 {
+        color: #2e7d32;
+        margin-bottom: 5px;
+    }
+
+    h4 {
+        font-weight: normal;
+        color: #555;
+        margin-bottom: 20px;
+    }
+
+    form {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+        padding: 10px 15px;
+        width: 75%;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 16px;
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: #2e7d32;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background-color: #27632a;
+    }
+
+    .response, .error {
+        margin-top: 20px;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: left;
+        max-height: 500px;
+        overflow-y: auto;
+        line-height: 1.7;
+        white-space: pre-wrap;
+    }
+
+    .response {
+        background-color: #e8f5e9;
+        border-left: 5px solid #2e7d32;
+        color: #333;
+    }
+
+    .response h3 {
+        color: #2e7d32;
+        margin-top: 15px;
+        margin-bottom: 5px;
+        font-size: 18px;
+    }
+
+    .response p {
+        margin: 8px 0;
+        font-size: 15px;
+        color: #444;
+    }
+
+    .response ul {
+        margin: 8px 0 12px 20px;
+        color: #444;
+    }
+
+    .response li {
+        margin-bottom: 6px;
+    }
+
+    .error {
+        background-color: #ffebee;
+        border-left: 5px solid #c62828;
+        color: #c62828;
+    }
+
+    .response::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .response::-webkit-scrollbar-thumb {
+        background-color: #2e7d32;
+        border-radius: 4px;
+    }
+</style>
+</head>
+<body>
+
+<div class="chatbox">
+    <h2>Ask BHOOGAMINI!</h2>
+    <h4>(This is a free API, so it may take a few moments to generate the answer. Please be patient.)</h4>
+    <form method="POST">
+        <input type="text" name="user_input" placeholder="Ask about agriculture..." required>
+        <button type="submit">Ask</button>
+    </form>
+
+    {% if response %}
+        <div class="response">
+            <!-- Example formatting for headings and text -->
+            {{ response | safe }}
+        </div>
+    {% elif error %}
+        <div class="error">
+            <p>{{ error }}</p>
+        </div>
+    {% endif %}
+</div>
+
+</body>
+</html>

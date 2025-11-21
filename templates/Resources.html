@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://kit.fontawesome.com/41604f30ec.js" crossorigin="anonymous"></script>
+
+  <style>
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+  }
+  
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .logo {
+    width: 100px;
+  }
+  
+  .user-icon {
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .section-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .accordion {
+    margin-bottom: 20px;
+  }
+  
+  .accordion-item {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+  }
+  
+  .accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .accordion-title {
+    font-weight: bold;
+  }
+  
+  .accordion-arrow {
+    font-size: 16px;
+    transition: transform 0.3s ease;
+  }
+  
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  
+  .accordion-content.show {
+    max-height: 300px; /* Adjust as needed */
+  }
+
+  /* --------------------djdnjdn------------- */
+  .contact-left{
+    flex-basis: 35%;
+}
+.contact-right{
+    flex-basis: 60%;
+}
+.contact-left p{
+    margin-top: 30px;
+}
+.contact-left p i{
+    color: #57b658;
+    font-size: 25px;
+    margin-right: 15px;
+}
+.social-icons{
+    margin-top: 30px;
+    margin-left: 35%;
+}
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: green;
+    display: inline-block;
+    transition: transform 0.5s;
+    margin-left: 30px;
+    
+}
+.social-icons a:hover{
+    color: black;
+    transform: translateY(-5px);
+}
+
+</style>
+<script src="https://kit.fontawesome.com/41604f30ec.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <img src="/AgroNova_Project/static/images/logo4.png" alt="SKIP logo" class="logo">
+    <i class="user-icon fas fa-user-circle"></i>
+  </div>
+
+  <h1>FAQ</h1>
+
+  <div class="section-title">Accessibility</div>
+
+  <div class="accordion">
+    <div class="accordion-item">
+      <div class="accordion-header">
+        <div class="accordion-title"> What is the purpose of this application?</div>
+        <i class="accordion-arrow fas fa-chevron-down"></i>
+      </div>
+      <div class="accordion-content">
+        <p>This application helps farmers improve soil health and crop yields by providing data-driven fertilizer recommendations based on soil health, crop type, and weather conditions.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header">
+        <div class="accordion-title">How does the application work?</div>
+        <i class="accordion-arrow fas fa-chevron-down"></i>
+      </div>
+      <div class="accordion-content">
+        <p>The app analyzes data from soil tests, the type of crops planted, and local weather patterns. It then suggests the best type and amount of fertilizer to use for sustainable and productive farming.</p>
+      </div>
+    </div>
+
+    
+    <div class="accordion-item">
+      <div class="accordion-header">
+        <div class="accordion-title">What information do I need to provide?</div>
+        <i class="accordion-arrow fas fa-chevron-down"></i>
+      </div>
+      <div class="accordion-content">
+        <p>•	You’ll need to input the following:
+          1.	Soil test results (NPK levels, pH, etc.)
+          2.	The type of crop you're growing
+          3.	Your location (for weather data)
+          </p>
+      </div>
+    </div>
+
+    
+    <div class="accordion-item">
+      <div class="accordion-header">
+        <div class="accordion-title">How does this app help improve soil health?</div>
+        <i class="accordion-arrow fas fa-chevron-down"></i>
+      </div>
+      <div class="accordion-content">
+        <p>By recommending the right amount of fertilizer, the app prevents overuse, which can lead to soil degradation. It ensures nutrients are added to the soil in a balanced and sustainable way.</p>
+      </div>
+    </div>
+
+    
+    <div class="accordion-item">
+      <div class="accordion-header">
+        <div class="accordion-title">Can the website handle different types of crops?</div>
+        <i class="accordion-arrow fas fa-chevron-down"></i>
+      </div>
+      <div class="accordion-content">
+        <p>	Yes, the website is designed to provide recommendations for various crop types. You just need to select the crop you are planting, and the app will adjust its recommendations accordingly.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header">
+        <div class="accordion-title">How is the weather data used in recommendations?</div>
+        <i class="accordion-arrow fas fa-chevron-down"></i>
+      </div>
+      <div class="accordion-content">
+        <p>Weather data, such as rainfall, temperature, and humidity, impacts how fertilizers are absorbed by plants and the soil. The app uses this data to fine-tune recommendations, ensuring that fertilizers are applied under the best conditions.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="contact">
+  <div class="container">
+      <div class="row">
+          <div class="contact-left">
+              <h1 class="sub-title">Important Links</h1>
+             
+              <div class="social-icons">
+                  <a href="https://farmkart.com"><i class="fa-solid fa-bottle-droplet"></i></a>
+                  <a href="https://www.iari.res.in/en/index.php"><i class="fa-solid fa-warehouse"></i></a>
+                  <a href="https://www.india.gov.in/topics/agriculture"><i class="fa-solid fa-wheat-awn"></i></i></a>
+                  <a href="https://icar.org.in/"><i class="fa-solid fa-cow"></i></a>
+              </div>
+          </div>
+      </div>
+  </div >
+  
+ </div>
+
+<script>
+const accordionItems = document.querySelectorAll('.accordion-item');
+
+accordionItems.forEach(item => {
+  const header = item.querySelector('.accordion-header');
+  const content = item.querySelector('.accordion-content');
+  const arrow = item.querySelector('.accordion-arrow');
+
+  header.addEventListener('click', () => {
+    content.classList.toggle('show');
+    arrow.classList.toggle('fa-chevron-down');
+    arrow.classList.toggle('fa-chevron-up');
+  });
+});
+</script>
+</body>
+</html>

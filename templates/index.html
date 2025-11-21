@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgeroNova Agriculture Information Website</title>
+    
+    <!-- ✅ FIXED: Use Flask to load CSS correctly -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    <script src="https://kit.fontawesome.com/41604f30ec.js" crossorigin="anonymous"></script>
+    
+    <!-- ✅ FIXED: Favicon path -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/Chatbot2.png') }}">
+</head>
+<body>
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <!-- ✅ FIXED: Logo path -->
+                <img src="{{ url_for('static', filename='images/1.png') }}" class="logo">
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">KisanMitra</a></li>
+                    <!-- ✅ FIXED: Link to Resources route -->
+                    <li><a target="_blank" href="{{ url_for('optimizer') }}">Resources</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="container">
+                <div class="header-text">
+                    <p>Agriculture Consultant</p>
+                    <h1>Hi, We're <span> Agro </span><br><span>Nova</span>,From India </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ---------about--------------- -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <!-- ✅ FIXED: Image path -->
+                    <img src="{{ url_for('static', filename='images/2.png') }}">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Us</h1>
+                    <p>At <b>Agronova</b>, we believe in the power of technology to transform agriculture and improve the lives of farmers. Our mission is to create innovative solutions that help farmers make smarter decisions and boost crop yields sustainably.
+                    <br> With the <b>Fertilizer Optimizer</b>, we've taken a step toward empowering farmers by simplifying the science behind soil nutrition. By using cutting-edge machine learning algorithms, our tool predicts the ideal NPK (Nitrogen, Phosphorus, Potassium) fertilizer quantities based on soil and crop data, ensuring that each field gets exactly what it needs.
+                    </p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('tab-1')">Members Info</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="tab-1">
+                        <ul>
+                            <li><span>Member 1:</span><br>Arpit Pareek </li>
+                            <li><span>Member 2:</span><br>Aryan Bhardwaj</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- -------------services------------- -->
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">KisanMitra</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-tractor"></i>
+                    <h2>FAQ's</h2>
+                    <p>Visit our FAQ section to find quick and clear responses to the most common queries about fertilizers, crops, and sustainable farming practices.</p>
+                    <!-- ✅ FIXED: Link to resources -->
+                    <a target="_blank" href="{{ url_for('resources') }}">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-plant-wilt"></i>
+                    <h2>Fertilizer Optimizer</h2>
+                    <p>Use our AI tool to get the perfect NPK recommendation for your crops.</p>
+                    <!-- ✅ FIXED: Link to optimizer form -->
+                    <a href="{{ url_for('optimizer') }}">Open Optimizer</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-flask"></i>
+                    <h2>Fertilizer Information</h2>
+                    <p>Learn the essentials of fertilizer usage with Kisan Mitra!</p>
+                    <a href="https://www.britannica.com/topic/fertilizer" target="_blank">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ------------our work ---------- -->
+    <div id="ourWork">
+        <div class="container">
+            <h1 class="sub-title">Our Work</h1>
+            <div class="work-list">
+                <div class="work">
+                    <!-- ✅ FIXED: Image path -->
+                    <img src="{{ url_for('static', filename='images/work-1.png') }}">
+                    <div class="layer">
+                        <h3>Plant Health</h3>
+                        <p>By analyzing soil composition, crop requirements, and environmental conditions...</p>
+                        <a href="https://www.fao.org/one-health/areas-of-work/plant-health/en" target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <!-- ✅ FIXED: Image path -->
+                    <img src="{{ url_for('static', filename='images/work-2.png') }}">
+                    <div class="layer">
+                        <h3>Growth Information</h3>
+                        <p>We’ll uncover how growth information technologies empower farmers...</p>
+                        <a href="https://kpmg.com/in/en/insights/2024/05/decoding-indias-economic-growth.html" target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <!-- ✅ FIXED: Image path -->
+                    <img src="{{ url_for('static', filename='images/pexels-quang-nguyen-vinh-222549-2165688.jpg') }}">
+                    <div class="layer">
+                        <h3>Farm View</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <a href="https://www.crazygames.com/game/lumber-harvest-tree-cutting-game" target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn">See more</a>
+        </div>
+    </div>
+
+    <!-- -----------contact------------- -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact us</h1>
+                    <p> <i class="fa-solid fa-paper-plane"></i> contact@agronova234.com</p>
+                    <p> <i class="fa-solid fa-square-phone"></i> 0123456789</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                    <!-- ✅ FIXED: PDF path -->
+                    <a href="{{ url_for('static', filename='images/Fertilizer Optimizer.pdf') }}" class="btn btn2">Download user Guide</a>
+                </div>
+                <div class="contact-right">
+                    <form>
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright @AgeroNova. Made with <i class="fa-solid fa-heart"></i> by Aryan bhardwaj</p>
+        </div>
+    </div>
+
+    <!-- CHATBOT -->
+    <div id="chatbox"> 
+        <!-- ✅ FIXED: Link to Chatbot Route -->
+        <a href="{{ url_for('chatbot') }}" target="_blank">
+            <img src="{{ url_for('static', filename='images/chatbot3.0.jpg') }}" alt="Chatbox logo"> 
+        </a>
+    </div> 
+    
+    <div id="toast-notification">
+        <i class="fa-solid fa-check-circle"></i> Form submitted successfully!
+    </div>
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        const itemsToAnimate = document.querySelectorAll('.services-list div, .work');
+        itemsToAnimate.forEach((item) => {
+            observer.observe(item);
+        });
+
+        const contactForm = document.querySelector('.contact-right form');
+        const toast = document.getElementById('toast-notification');
+
+        if(contactForm) {
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                toast.classList.add('show');
+                setTimeout(() => {
+                    contactForm.reset();
+                }, 100);
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 3000);
+            });
+        }
+    </script>
+</body>
+</html>
