@@ -10,8 +10,6 @@ app = Flask(__name__)
 MODEL_FILE = 'fertilizer_model.pkl'
 
 # Configure Gemini (Chatbot)
-# For deployment, set the 'GEMINI_API_KEY' in Render Environment Variables.
-# For local testing, you can paste your key below, but DO NOT share the file if you do.
 GEMINI_API_KEY = "AIzaSyCncUuQhQWQXjWmCoNjduYg98eFzjJmQbQ"
 
 genai.configure(api_key=GEMINI_API_KEY)
@@ -65,15 +63,12 @@ def predict():
         ]
 
         # 2. Encoding Logic
-        # This MUST match exactly how the model was trained in generate_and_train.py
-        
-        # Soil Encoding (Alphabetical order: Clay, Loamy, Sandy -> Drop First (Clay) -> [Loamy, Sandy])
         soil_encoded = [
             1 if soil_type == 'loamy' else 0, 
             1 if soil_type == 'sandy' else 0
         ]
 
-        # Crop Encoding (Alphabetical order: Maize, Rice, Wheat -> Drop First (Maize) -> [Rice, Wheat])
+        # Crop Encoding 
         crop_encoded = [
             1 if crop_type == 'rice' else 0,
             1 if crop_type == 'wheat' else 0
@@ -101,7 +96,7 @@ def chatbot():
     
     if request.method == "POST":
         user_input = request.form.get("user_input")
-        # Check if input exists and API key is set (not the placeholder)
+        # Check if input exists and API key is set 
         if user_input and GEMINI_API_KEY != "YOUR_GEMINI_API_KEY_HERE":
             try:
                 response = gemini_model.generate_content(user_input)
